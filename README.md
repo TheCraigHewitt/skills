@@ -19,7 +19,7 @@ npx skills@latest add TheCraigHewitt/skills --full-depth
 **By category:**
 
 ```bash
-npx skills@latest add TheCraigHewitt/skills/ceo       # 5 CEO skills
+npx skills@latest add TheCraigHewitt/skills/ceo       # 10 CEO skills
 npx skills@latest add TheCraigHewitt/skills/sales      # 21 sales skills
 npx skills@latest add TheCraigHewitt/skills/youtube     # 15 YouTube skills
 npx skills@latest add TheCraigHewitt/skills/general     # General-purpose skills
@@ -43,19 +43,41 @@ Copy a SKILL.md file's content into your Project's custom instructions.
 
 ---
 
-## CEO Skills (5)
+## CEO Skills (10)
 
-Skills for the founder running the business -- decisions, meetings, content, sales prep, and weekly operating rhythm.
+Skills for the founder running the business -- decisions, meetings, hiring, finances, delegation, and operating rhythm.
 
 All CEO skills check for a `BUSINESS_CONTEXT.md` file in your project. On first run, the skill walks you through creating one. After that, every skill uses it automatically. See the [template](ceo/BUSINESS_CONTEXT_TEMPLATE.md).
+
+### Strategy & Decisions
 
 | Skill | What It Does |
 |-------|-------------|
 | [strategic-sparring](ceo/strategic-sparring/) | Pressure-test decisions with an AI sparring partner that challenges assumptions, models scenarios, and finds blind spots. |
 | [meeting-prep](ceo/meeting-prep/) | Walk into any meeting with a sharp briefing and walk out with action items + follow-up email sent in 10 minutes. |
-| [content-repurpose](ceo/content-repurpose/) | Turn one video, podcast, or post into a week of content -- newsletter, social posts, short-form scripts, threads. |
 | [prospect-research](ceo/prospect-research/) | Generate a pre-call intelligence brief so you walk into sales conversations with context, not cold air. |
+
+### Operating Rhythm
+
+| Skill | What It Does |
+|-------|-------------|
 | [weekly-review](ceo/weekly-review/) | 15-minute structured weekly check-in -- scorecard, wins, lessons, priority check, next week's focus. |
+| [quarterly-review](ceo/quarterly-review/) | 90-minute quarterly deep dive -- strategy reset, keep/kill/start priorities, next quarter's 3 big bets. |
+| [financial-review](ceo/financial-review/) | Structured "own your numbers" session -- P&L, cash, unit economics, pricing, spending decisions. |
+
+### People & Operations
+
+| Skill | What It Does |
+|-------|-------------|
+| [hiring](ceo/hiring/) | End-to-end hiring -- role definition, job posts, interview process, candidate evaluation, the hire/no-hire call. |
+| [one-on-ones](ceo/one-on-ones/) | Run effective 1:1s with direct reports -- prep, feedback delivery, performance conversations. |
+| [delegation](ceo/delegation/) | Identify bottlenecks and hand things off -- time audit, 4-bucket sort, resistance coaching, delegation plan. |
+
+### Content
+
+| Skill | What It Does |
+|-------|-------------|
+| [content-repurpose](ceo/content-repurpose/) | Turn one video, podcast, or post into a week of content -- newsletter, social posts, short-form scripts, threads. |
 
 ---
 
@@ -180,7 +202,7 @@ All YouTube skills check for a `youtube-context.md` file. Run `youtube-context` 
 
 | Skill | What It Does |
 |-------|-------------|
-| [handoff](general/handoff/) | Package context for AI agents, your future self, or coworkers. Modes: create, list, update, view. |
+| [handoff](general/) | Package context for AI agents, your future self, or coworkers. Modes: create, list, update, view. |
 
 ---
 
@@ -194,10 +216,10 @@ No framework. No runtime. No dependencies. Just a well-written prompt.
 
 ## About
 
-Built by **[Craig Hewitt](https://founderlevel.co)** -- founder/CEO of [Castos](https://castos.com) ($1.5M ARR podcast hosting), building [FounderLevel](https://founderlevel.co) on YouTube, and coaching founders through AI transformation with [The AI-Ready CEO](https://founderlevel.co).
+Built by **[Craig Hewitt](https://craighewitt.com)** -- founder/CEO of [Castos](https://castos.com) (7-figure ARR podcast hosting), building [FounderLevel](https://founderlevel.co) on YouTube, and coaching founders through AI transformation with [The AI-Ready CEO](https://craighewitt.com).
 
 - [YouTube](https://youtube.com/@founderlevel) -- AI + founder leadership
-- [Substack](https://founderlevel.substack.com) -- Weekly newsletter
+- [Website](https://craighewitt.com)
 - [X/Twitter](https://twitter.com/thecraighewitt)
 
 ## License
