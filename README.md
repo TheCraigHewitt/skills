@@ -1,39 +1,97 @@
 # Skills
 
-Claude Code skills — custom slash commands that extend what Claude Code can do in your projects.
+AI skills for founders — install them in Claude Code, use them in Claude Projects, or drop them into any AI agent that reads markdown.
 
-## Available Skills
+Each skill is a standalone prompt that makes your AI assistant dramatically better at a specific task. No API keys, no setup, no dependencies.
 
-| Skill | Description | Install |
-|-------|-------------|---------|
-| [`/handoff`](skills/handoff.md) | Package context for AI agents, your future self, or coworkers | [Install](#handoff) |
+## CEO Skills
 
-## Install
+Skills for the founder running the business — decisions, meetings, content, sales prep, and weekly operating rhythm.
 
-Each skill is a single markdown file. Drop it into your project's `.claude/commands/` directory.
-
-### /handoff
+**Install all CEO skills:**
 
 ```bash
-mkdir -p .claude/commands && curl -o .claude/commands/handoff.md \
-  https://raw.githubusercontent.com/TheCraigHewitt/skills/main/skills/handoff.md
+npx skills@latest add TheCraigHewitt/skills/ceo
 ```
 
-Packages shaped context — plans, decisions, project state — into structured handoff documents. Auto-detects plan files from `.claude/plans/`, reads git state and CLAUDE.md, and generates audience-optimized output for AI agents, yourself later, or coworkers.
+**Or install individually:**
 
-**Modes:** `/handoff` (create) | `/handoff list` | `/handoff update [slug]` | `/handoff view [slug]`
+| Skill | What it does | Install |
+|-------|-------------|---------|
+| **[strategic-sparring](ceo/strategic-sparring/SKILL.md)** | Pressure-test decisions with an AI sparring partner that challenges your assumptions, models scenarios, and finds blind spots | `npx skills@latest add TheCraigHewitt/skills/ceo -s strategic-sparring` |
+| **[meeting-prep](ceo/meeting-prep/SKILL.md)** | Walk into any meeting with a sharp briefing and walk out with action items + follow-up email sent in 10 minutes | `npx skills@latest add TheCraigHewitt/skills/ceo -s meeting-prep` |
+| **[content-repurpose](ceo/content-repurpose/SKILL.md)** | Turn one video, podcast, or post into a week of content — newsletter, social posts, short-form scripts, threads | `npx skills@latest add TheCraigHewitt/skills/ceo -s content-repurpose` |
+| **[prospect-research](ceo/prospect-research/SKILL.md)** | Generate a pre-call intelligence brief so you walk into sales conversations with context, not cold air | `npx skills@latest add TheCraigHewitt/skills/ceo -s prospect-research` |
+| **[weekly-review](ceo/weekly-review/SKILL.md)** | 15-minute structured weekly check-in — scorecard, wins, lessons, priority check, next week's focus | `npx skills@latest add TheCraigHewitt/skills/ceo -s weekly-review` |
 
-See [examples](examples/) for sample output: [AI agent handoff](examples/handoff-ai-agent.md) | [Self/later handoff](examples/handoff-self-later.md)
+All CEO skills check for a `BUSINESS_CONTEXT.md` file in your project. On first run, the skill walks you through creating one. After that, every skill uses it automatically — your AI gets smarter about your business over time.
+
+See the [business context template](ceo/BUSINESS_CONTEXT_TEMPLATE.md) to set one up in advance.
+
+## General Skills
+
+| Skill | What it does | Install |
+|-------|-------------|---------|
+| **[handoff](skills/handoff.md)** | Package context for AI agents, your future self, or coworkers | `npx skills@latest add TheCraigHewitt/skills -s handoff` |
+
+## Sales Skills (21 skills)
+
+A complete B2B sales toolkit — discovery calls, cold email, proposals, forecasting, and more.
+
+**See the full collection:** [TheCraigHewitt/sales-skills](https://github.com/TheCraigHewitt/sales-skills)
+
+```bash
+npx skills@latest add TheCraigHewitt/sales-skills
+```
+
+## Coming Soon
+
+- **YouTube Skills** — ideation, scripting, thumbnail strategy, analytics review
+- More categories as they're built
+
+---
+
+## How to Use
+
+### Claude Code / Cowork
+
+Install with `npx`:
+
+```bash
+npx skills@latest add TheCraigHewitt/skills/ceo
+```
+
+Skills appear as slash commands — type `/strategic-sparring`, `/meeting-prep`, etc.
+
+### Claude Projects (Web)
+
+1. Open a skill's SKILL.md file
+2. Copy the content
+3. Paste it into your Project's custom instructions
+4. The skill is now available in every conversation in that project
+
+### Codex / Other Agents
+
+Clone the repo into your project:
+
+```bash
+git clone https://github.com/TheCraigHewitt/skills.git .skills
+```
+
+Or grab individual files — each SKILL.md is self-contained.
+
+### Manual Install (any agent)
+
+```bash
+mkdir -p .claude/commands && curl -o .claude/commands/strategic-sparring.md \
+  https://raw.githubusercontent.com/TheCraigHewitt/skills/main/ceo/strategic-sparring/SKILL.md
+```
 
 ## How Skills Work
 
-Skills are Claude Code's [custom slash commands](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands). A `.md` file in `.claude/commands/` becomes a `/command` you can run in any Claude Code session. The markdown defines the skill's behavior — what context to gather, what questions to ask, and what to generate.
+Skills are markdown files that define how an AI assistant should behave for a specific task. They include the persona, workflow, questions to ask, output format, and rules. Drop a skill file where your AI agent reads instructions, and it just works.
 
-Skills are portable. They work in any repo. Drop the file in, use the command.
-
-## Requirements
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
+No framework. No runtime. No dependencies. Just a well-written prompt.
 
 ## License
 
