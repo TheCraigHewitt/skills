@@ -62,7 +62,7 @@ The first three skills are from [Matt Pocock](https://github.com/mattpocock/skil
 
 | Skill | What It Does |
 |-------|-------------|
-| [ralph](coding/) | Autonomous implementation loop — picks up GitHub issues one by one, implements with TDD, runs a code review gate after every commit, and keeps going until the PRD is done. Human-in-the-loop or fully autonomous in a Docker sandbox. |
+| [ralph](coding/ralph/) | Autonomous implementation loop — picks up GitHub issues one by one, implements with TDD, runs a code review gate after every commit, and keeps going until the PRD is done. Human-in-the-loop or fully autonomous in a Docker sandbox. |
 
 **Install the full pipeline:**
 
