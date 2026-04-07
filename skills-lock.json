@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "financial-review": {
+      "source": "TheCraigHewitt/skills",
+      "sourceType": "github",
+      "computedHash": "fb47234cc5676393bfee613c3627e1a89146efc034df020d1762e1ec201686d5"
+    }
+  }
+}

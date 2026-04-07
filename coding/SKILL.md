@@ -32,10 +32,10 @@ After installing this skill, copy the RALPH scripts to your project root:
 
 ```bash
 mkdir -p ralph
-cp .agents/skills/ralph/afk-ralph.sh ralph/
-cp .agents/skills/ralph/ralph-once.sh ralph/
-cp .agents/skills/ralph/prompt.md ralph/
-cp .agents/skills/ralph/review-prompt.md ralph/
+cp .agents/skills/coding/afk-ralph.sh ralph/
+cp .agents/skills/coding/ralph-once.sh ralph/
+cp .agents/skills/coding/prompt.md ralph/
+cp .agents/skills/coding/review-prompt.md ralph/
 chmod +x ralph/*.sh
 ```
 
