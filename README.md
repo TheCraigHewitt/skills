@@ -1,6 +1,6 @@
 # Skills
 
-AI skills for founders, sales teams, and creators. Install them in Claude Code, use them in Claude Projects, or drop them into any AI agent that reads markdown.
+AI skills for founders, sales teams, creators, and developers. Install them in Claude Code, use them in Claude Projects, or drop them into any AI agent that reads markdown.
 
 Each skill is a standalone prompt that makes your AI assistant dramatically better at a specific task. No API keys, no setup, no dependencies.
 
@@ -22,6 +22,7 @@ npx skills@latest add TheCraigHewitt/skills --full-depth
 npx skills@latest add TheCraigHewitt/skills/ceo       # 10 CEO skills
 npx skills@latest add TheCraigHewitt/skills/sales      # 21 sales skills
 npx skills@latest add TheCraigHewitt/skills/youtube     # 15 YouTube skills
+npx skills@latest add TheCraigHewitt/skills/coding      # RALPH autonomous coding workflow
 npx skills@latest add TheCraigHewitt/skills/general     # General-purpose skills
 ```
 
@@ -40,6 +41,40 @@ git clone https://github.com/TheCraigHewitt/skills.git .agents/skills
 ### Claude Projects (Web)
 
 Copy a SKILL.md file's content into your Project's custom instructions.
+
+---
+
+## Coding Skills — Stop Vibe Coding
+
+Three slash commands take you from raw idea to shipped, tested, production-ready code — even if you've never written a line.
+
+```
+/grill-me        →  Stress-test your idea (so AI doesn't build the wrong thing)
+      ↓
+/write-a-prd     →  Turn it into an engineering spec as a GitHub issue
+      ↓
+/prd-to-issues   →  Break it into bite-sized tasks with dependencies
+      ↓
+/ralph           →  AI implements each task with TDD + code review, autonomously
+```
+
+The first three skills are from [Matt Pocock](https://github.com/mattpocock/skills). RALPH is the execution engine that closes the loop.
+
+| Skill | What It Does |
+|-------|-------------|
+| [ralph](coding/ralph/) | Autonomous implementation loop — picks up GitHub issues one by one, implements with TDD, runs a code review gate after every commit, and keeps going until the PRD is done. Human-in-the-loop or fully autonomous in a Docker sandbox. |
+
+**Install the full pipeline:**
+
+```bash
+# Planning skills (credit: Matt Pocock — github.com/mattpocock/skills)
+npx skills@latest add mattpocock/skills -s grill-me
+npx skills@latest add mattpocock/skills -s write-a-prd
+npx skills@latest add mattpocock/skills -s prd-to-issues
+
+# Execution engine
+npx skills@latest add TheCraigHewitt/skills/coding -s ralph
+```
 
 ---
 
@@ -218,7 +253,7 @@ No framework. No runtime. No dependencies. Just a well-written prompt.
 
 Built by **[Craig Hewitt](https://craighewitt.com)** -- founder/CEO of [Castos](https://castos.com) (7-figure ARR podcast hosting), building [FounderLevel](https://founderlevel.co) on YouTube, and coaching founders through AI transformation with [The AI-Ready CEO](https://craighewitt.com).
 
-- [YouTube](https://youtube.com/@founderlevel) -- AI + founder leadership
+- [YouTube](https://youtube.com/@thecraighewitt) -- AI + founder leadership
 - [Website](https://craighewitt.com)
 - [X/Twitter](https://twitter.com/thecraighewitt)
 
