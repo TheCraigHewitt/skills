@@ -46,31 +46,37 @@ Copy a SKILL.md file's content into your Project's custom instructions.
 
 ## Coding Skills — Stop Vibe Coding
 
-Three slash commands take you from raw idea to shipped, tested, production-ready code — even if you've never written a line.
+A planning + execution pipeline that takes you from raw idea to shipped, tested, production-ready code — even if you've never written a line. Pick the manual planning path if you want full control, or the fast path if you trust the AI to make sensible defaults.
 
 ```
-/grill-me        →  Stress-test your idea (so AI doesn't build the wrong thing)
-      ↓
-/write-a-prd     →  Turn it into an engineering spec as a GitHub issue
-      ↓
-/prd-to-issues   →  Break it into bite-sized tasks with dependencies
-      ↓
-/ralph           →  AI implements each task with TDD + code review, autonomously
+PLANNING — pick one
+  /grill-me  →  /write-a-prd     Manual path: interactive grilling, then PRD
+                    OR
+  /shape                          Fast path: auto-grill + PRD in one shot
+       ↓
+EXECUTION
+  /prd-to-issues                  Break the PRD into bite-sized tasks
+       ↓
+  /ralph                          AI implements each task with TDD + code review
 ```
 
-The first three skills are from [Matt Pocock](https://github.com/mattpocock/skills). RALPH is the execution engine that closes the loop.
+`/grill-me`, `/write-a-prd`, and `/prd-to-issues` are from [Matt Pocock](https://github.com/mattpocock/skills). `/shape` and `/ralph` are the additions that close the loop.
 
 | Skill | What It Does |
 |-------|-------------|
+| [shape](coding/shape/) | Fast-path planning. Walks the full decision tree (edge cases, modules, schema, testing, security) by self-answering with software-engineering best practices, streams the Q&A live so you can spot bad assumptions, and writes a PRD locally with an option to push as a GitHub issue. Same PRD format as `/write-a-prd`, so the rest of the pipeline accepts it unchanged. |
 | [ralph](coding/ralph/) | Autonomous implementation loop — picks up GitHub issues one by one, implements with TDD, runs a code review gate after every commit, and keeps going until the PRD is done. Human-in-the-loop or fully autonomous in a Docker sandbox. |
 
 **Install the full pipeline:**
 
 ```bash
-# Planning skills (credit: Matt Pocock — github.com/mattpocock/skills)
+# Manual planning skills (credit: Matt Pocock — github.com/mattpocock/skills)
 npx skills@latest add mattpocock/skills -s grill-me
 npx skills@latest add mattpocock/skills -s write-a-prd
 npx skills@latest add mattpocock/skills -s prd-to-issues
+
+# Fast-path planning
+npx skills@latest add TheCraigHewitt/skills/coding -s shape
 
 # Execution engine
 npx skills@latest add TheCraigHewitt/skills/coding -s ralph
